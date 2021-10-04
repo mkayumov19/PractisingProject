@@ -18,8 +18,7 @@ public class SingleChromeDriverInitiation {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https:google.com");
-        driver.findElement(By.xpath("//a[@class='gb_3 gb_4 gb_9d gb_3c']")).click();
-        driver.findElement(By.id("identifierId")).sendKeys("makhmudik19@gmail.com"+ Keys.ENTER);
+
 
 
 
