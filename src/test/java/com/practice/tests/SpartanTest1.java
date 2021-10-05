@@ -1,10 +1,13 @@
-package com.practice.step_defs;
+package com.practice.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+
 
 public class SpartanTest1 {
 
@@ -21,8 +24,8 @@ public class SpartanTest1 {
     @Test
     public void getSpartan2(){
         Response response = RestAssured.get(spartanBaseUrl+"/api/spartans");
-        Assert.assertEquals(response.statusCode(), 200);
-        Assert.assertTrue(response.body().asString().contains("Tedmund"));
+        assertEquals(response.statusCode(), 200);
+        assertTrue(response.body().asString().contains("Tedmund"));
 //        System.out.println(response.body().prettyPrint());
     }
 
@@ -30,8 +33,8 @@ public class SpartanTest1 {
     public void getSpartan3(){
         Response response = RestAssured.given().accept(ContentType.JSON)
                 .when().get(spartanBaseUrl+"/api/spartans");
-        Assert.assertEquals(response.statusCode(), 200);
-        Assert.assertEquals(response.contentType(), "application/json");
+        assertEquals(response.statusCode(), 200);
+        assertEquals(response.contentType(), "application/json");
     }
 
 }

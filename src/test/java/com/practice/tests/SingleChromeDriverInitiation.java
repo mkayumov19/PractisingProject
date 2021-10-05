@@ -1,10 +1,8 @@
-package com.practice.step_defs;
+package com.practice.tests;
 
 import com.practice.utilities.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

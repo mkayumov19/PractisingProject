@@ -1,17 +1,15 @@
 package com.practice.utilities;
 
-import org.junit.Assert;
+import com.ibm.icu.impl.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
-
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BrowserUtils {
 
@@ -39,7 +37,7 @@ public class BrowserUtils {
         WebDriverWait wait = new WebDriverWait(com.practice.utilities.Driver.getDriver(), 10);
         wait.until(ExpectedConditions.titleIs(expectedTitle));
         String actualTitle = com.practice.utilities.Driver.getDriver().getTitle();
-        Assert.assertEquals(expectedTitle, actualTitle);
+        assertEquals(expectedTitle, actualTitle);
     }
 
     /**
@@ -126,7 +124,7 @@ public class BrowserUtils {
      */
     public static void verifyElementDisplayed(By by) {
         try {
-            assertTrue("Element not visible: " + by, com.practice.utilities.Driver.getDriver().findElement(by).isDisplayed());
+            assertTrue(Driver.getDriver().findElement(by).isDisplayed(), "Element not visible: " + by);
         } catch (NoSuchElementException e) {
             Assert.fail("Element not found: " + by);
         }
@@ -140,7 +138,7 @@ public class BrowserUtils {
      */
     public static void verifyElementDisplayed(WebElement element) {
         try {
-            assertTrue("Element not visible: " + element, element.isDisplayed());
+            assertTrue(element.isDisplayed(), "Element not visible: " + element);
         } catch (NoSuchElementException e) {
             Assert.fail("Element not found: " + element);
         }
